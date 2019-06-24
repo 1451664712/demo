@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    
+}
+
+#home {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.warp {
+    position: absolute;
+    left: 50%;
+    top: 250px;
+    transform: translateX(-50%);
+    z-index: 99;
+    transition: .5s all;
+    animation: move 0.8s linear 0s;
+}
+
+.warp>h1 {
+    color: #fff;
+    font-size: 7em;
+    letter-spacing: 4px;
+    line-height: 0.8;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px rgba(16, 16, 16, 0.57);
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.warp>h1>i {
+    font-size: 0.6em;
+    margin-bottom: 7px;
+}
+
+.warp>h1>span {
+    font-weight: 600;
+    display: block;
+    letter-spacing: 3px;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    text-shadow: 2px 2px 2px rgba(16, 16, 16, 0.57);
+}
+
+.warp>h1>a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.icon {
+    position: absolute;
+    right: 140px;
+    top: 160px;
+    z-index: 99;
+}
+
+.icon>i {
+    color: #fff;
+    font-weight: bold;
+    font-size: 27px
+}
+
+.icon:hover i {
+    cursor: pointer;
+    animation: Shake 0.3s linear 0s;
+}
+
+.mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 0;
+    overflow: hidden;
+    background: rgba(0, 0, 0, .3);
+    transition: .5s all;
+    z-index: 99;
+}
+
+.addWidth {
+    width: 400px;
+}
+
+
+.mask>div {
+    text-align: right
+}
+
+.mask>div>span {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    background: #1bb580;
+    color: #fff;
+    text-align: center;
+    line-height: 40px
+}
+
+.mask>div:hover span {
+    cursor: pointer;
+}
+
+.mask>ul {
+    text-align: center;
+    margin-top: 30%;
+}
+
+.mask>ul>li {
+    padding: 10px 0;
+    line-height: 2.5em
+}
+
+.mask>ul>li>a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff
+}
+
+.gallery_block {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery_block>ul {
+    width: 23000px;
+}
+
+.gallery_block>ul>li {
+    position: relative;
+    width: 100vw;
+    height: 840px;
+    float: left;
+}
+
+.gallery_block>ul>li>img {
+    width: 100%;
+    height: 100%;
+}
+
+.gallery_block>span {
+    width: 60px;
+    height: 40px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    background: none;
+    position: absolute;
+    z-index: 99;
+    transition: .5s all
+}
+
+.gallery_block>.left {
+    left: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8) url("http://demo.cssmoban.com/cssthemes5/cpts_1622_cpa/images/left_black.png") no-repeat;
+    background-size: 30px;
+    border-radius: 0 20px 20px 0;
+    background-position: right
+}
+
+.gallery_block>.right {
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8) url("http://demo.cssmoban.com/cssthemes5/cpts_1622_cpa/images/right_black.png") no-repeat;
+    background-size: 30px;
+    border-radius: 20px 0 0 20px;
+    background-position: left
+}
+
+.gallery_block:hover .left {
+    left: 0;
+}
+
+.gallery_block:hover .right {
+    right: 0;
+}
+
+.gallery_description-block {
+    padding: 15px 0;
+    background: rgba(20, 20, 21, 0.32);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.gallery_description-block span {
+    font-size: 16px;
+    color: #fff;
+    margin-left: 15px;
+    letter-spacing: 5px;
+    font-family: Arial, Helvetica, sans-serif
+}
+.gallery_controls {
+    width: 100%;
+    height: 100%;
+    padding: 10px 0
+}
+.gallery_controls>ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery_controls>ul>li {
+    position: relative;
+    width: 8%;
+    margin-right: 5px;
+    overflow: hidden;
+}
+
+.gallery_controls>ul>li>img {
+    width: 100%;
+    transition: .5s all
+}
+
+.gallery_controls>ul>li>span {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: #1bb580;
+    border-radius: 10px;
+    transition: .5s all
+}
+
+.gallery_controls>ul>li:hover img {
+    cursor: pointer;
+    ;
+    transform: scale(1.1)
+}
+
+.gallery_controls>ul>li:hover span {
+    width: 100%;
+}

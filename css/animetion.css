@@ -1,0 +1,51 @@
+
+@keyframes move{
+	0%{
+        top:0;
+        opacity: 0;
+	}
+	
+	/* 20%{
+		top:0;
+	}
+	35%{
+		top:0;
+	} */
+	50%{
+        top:150px;
+        opacity: .5;
+	}
+	/* 65%{
+		top:0;
+	}
+	80%{
+		top:0;
+	} */
+	100%{
+        top:250px;
+        opacity: 1;
+	}
+}
+@keyframes Shake{
+	0%{
+        transform: rotate(0deg);
+	}
+	20%{
+        transform: rotate(20deg);
+	}
+	35%{
+		transform: rotate(35deg);
+	}
+	50%{
+        transform: rotate(20deg);
+	}
+	65%{
+		transform: rotate(0deg);
+	}
+	80%{
+		transform: rotate(-20deg);
+	}
+	100%{
+        transform: rotate(0deg);
+	}
+}
