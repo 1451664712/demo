@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
-    
+
 }
 
 #home {
@@ -77,13 +77,13 @@
     height: 100vh;
     width: 0;
     overflow: hidden;
-    background: rgba(0, 0, 0, .3);
+    background: rgba(6, 6, 6, 0.55);
     transition: .5s all;
     z-index: 99;
 }
 
 .addWidth {
-    width: 400px;
+    width: 50%;
 }
 
 
@@ -108,7 +108,7 @@
 
 .mask>ul {
     text-align: center;
-    margin-top: 30%;
+    margin-top: 10%;
 }
 
 .mask>ul>li {
@@ -117,7 +117,7 @@
 }
 
 .mask>ul>li>a {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 18px;
     text-decoration: none;
     color: #fff
@@ -130,14 +130,16 @@
 }
 
 .gallery_block>ul {
-    width: 23000px;
+    width: 24000px;
+    position: relative;
+    transition: .5s all
 }
 
 .gallery_block>ul>li {
-    position: relative;
     width: 100vw;
     height: 840px;
     float: left;
+    transition: .5s all
 }
 
 .gallery_block>ul>li>img {
@@ -154,7 +156,6 @@
     background: none;
     position: absolute;
     z-index: 99;
-    transition: .5s all
 }
 
 .gallery_block>.left {
@@ -200,11 +201,13 @@
     letter-spacing: 5px;
     font-family: Arial, Helvetica, sans-serif
 }
+
 .gallery_controls {
     width: 100%;
     height: 100%;
     padding: 10px 0
 }
+
 .gallery_controls>ul {
     width: 100%;
     display: flex;
@@ -216,15 +219,50 @@
     position: relative;
     width: 8%;
     margin-right: 5px;
+    opacity: .3;
+    cursor: pointer;
     overflow: hidden;
 }
 
 .gallery_controls>ul>li>img {
     width: 100%;
+}
+
+/* .gallery_controls>ul>li>span {
+    position: absolute;
+    display: inline-block;
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: 20px;
+    background: #1bb580;
+    // transition: .5s all
+} */
+
+.gallery_controls>ul>li>svg {
+    position: absolute;
+    left: 0;
+    top: 0;
     transition: .5s all
 }
 
-.gallery_controls>ul>li>span {
+/* .aa {
+    stroke: yellow;
+    fill: none;
+    stroke-dasharray: 442px;
+    stroke-dashoffset: 442px;
+    transition: all .5s
+
+}
+.gallery_controls>ul>li:hover polyline {
+    stroke-dashoffset: 0
+} */
+
+.gallery_controls>ul>.hover {
+    opacity: 1
+}
+
+/* .gallery_controls>ul>li>span {
     position: absolute;
     bottom: 0;
     width: 0;
@@ -232,14 +270,13 @@
     background: #1bb580;
     border-radius: 10px;
     transition: .5s all
-}
+} */
 
-.gallery_controls>ul>li:hover img {
+/* .gallery_controls>ul>li:hover img {
     cursor: pointer;
-    ;
     transform: scale(1.1)
 }
 
 .gallery_controls>ul>li:hover span {
     width: 100%;
-}
+} */
