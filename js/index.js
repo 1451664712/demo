@@ -1,4 +1,16 @@
 $(function () {
+    // for (var i = 0; i < list.length; i++) {
+    //     (function (index) {
+    //         list[index].onclick = function () {
+    //             for (var i = 0; i < list.length; i++) {
+    //                 list[i].classList.remove("hover")
+    //             }
+    //             this.classList.add("hover")
+    //             oUl.style.left = `-${index * oWidth}` + 'px'
+    //             console.log(index);
+    //         }
+    //     })(i)
+    // }
     $('#menu').click(() => {
         $('.mask').toggleClass('addWidth');
     })
