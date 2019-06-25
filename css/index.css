@@ -156,6 +156,7 @@
     background: none;
     position: absolute;
     z-index: 99;
+    transition: .3s all
 }
 
 .gallery_block>.left {

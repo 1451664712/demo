@@ -6,20 +6,39 @@ $(function () {
         $('.mask').removeClass('addWidth')
     })
     var oWidth = document.querySelectorAll('.gallery_block>ul>li')[0].offsetWidth
-    var aWidth = document.querySelectorAll('.gallery_controls>ul>li')[0].offsetWidth
     var list = document.querySelectorAll('.gallery_controls>ul>li')
     var oUl = document.querySelector('.gallery_block>ul')
-    var oSpan = document.querySelectorAll('.gallery_controls>ul>li>span')
-    console.log(aWidth);
-    list.forEach((item, index) => {
+    var index = 0;
+    list.forEach((item, _index) => {
         item.onclick = function () {
             for (var i = 0; i < list.length; ++i) {
                 list[i].classList.remove("hover")
             }
             this.classList.add("hover")
-            oUl.style.left = `-${index * oWidth}` + 'px'
+            oUl.style.left = `-${_index * oWidth}` + 'px'
+            index = _index
         }
     })
+
+    var oLeftBtn = document.querySelector('.left')
+    var oRightBtn = document.querySelector('.right')
+    var oLength = document.querySelectorAll('.gallery_block>ul>li').length
+    oLeftBtn.onclick = function () {
+        index--
+        if (index < 0) {
+            index = 0
+        }
+        oUl.style.left = `-${index * oWidth}` + 'px'
+        list[index].classList.add("hover")
+        list[index + 1].classList.remove("hover")
+    }
+    oRightBtn.onclick = function () {
+        index++
+        if (index > oLength - 1) {
+            index = oLength - 1
+        }
+        oUl.style.left = `-${index * oWidth}` + 'px'
+        list[index].classList.add("hover")
+        list[index - 1].classList.remove("hover")
+    }
 })
-var aa = document.querySelectorAll('polyline')
-console.log(aa);
