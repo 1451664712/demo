@@ -11,46 +11,81 @@ $(function () {
     //         }
     //     })(i)
     // }
-    $('#menu').click(() => {
+    $('#menu').click((e) => {
+        if (e && e.stopPropagation) {
+            e.stopPropagation();
+        } else {
+            window.event.cancelBubble = true;
+        }
         $('.mask').toggleClass('addWidth');
     })
-    $('#close').click(() => {
+    $('#close').click((e) => {
+        if (e && e.stopPropagation) {
+            e.stopPropagation();
+        } else {
+            window.event.cancelBubble = true;
+        }
         $('.mask').removeClass('addWidth')
     })
     var oWidth = document.querySelectorAll('.gallery_block>ul>li')[0].offsetWidth
     var list = document.querySelectorAll('.gallery_controls>ul>li')
     var oUl = document.querySelector('.gallery_block>ul')
-    var index = 0;
-    list.forEach((item, _index) => {
+    var _index = 0;
+    list.forEach((item, index) => {
         item.onclick = function () {
-            for (var i = 0; i < list.length; ++i) {
-                list[i].classList.remove("hover")
-            }
+            clearClass()
             this.classList.add("hover")
-            oUl.style.left = `-${_index * oWidth}` + 'px'
-            index = _index
+            oUl.style.left = `-${index * oWidth}` + 'px'
+            _index = index
         }
-    })
+    });
 
-    var oLeftBtn = document.querySelector('.left')
-    var oRightBtn = document.querySelector('.right')
-    var oLength = document.querySelectorAll('.gallery_block>ul>li').length
-    oLeftBtn.onclick = function () {
-        index--
-        if (index < 0) {
-            index = 0
-        }
-        oUl.style.left = `-${index * oWidth}` + 'px'
-        list[index].classList.add("hover")
-        list[index + 1].classList.remove("hover")
+    // 清除所有小图片样式
+    var clearClass = () => {
+        list.forEach((item) => {
+            item.classList.remove("hover")
+        })
+        oUl.style.left = `-${_index * oWidth}` + 'px'
+        list[_index].classList.add("hover")
     }
-    oRightBtn.onclick = function () {
-        index++
-        if (index > oLength - 1) {
-            index = oLength - 1
-        }
-        oUl.style.left = `-${index * oWidth}` + 'px'
-        list[index].classList.add("hover")
-        list[index - 1].classList.remove("hover")
+
+    var oLeftBtn = document.querySelector('.left');
+    var oRightBtn = document.querySelector('.right');
+    var oLength = document.querySelectorAll('.gallery_block>ul>li').length;
+    oLeftBtn.onclick = () => {
+        left()
     }
+    oRightBtn.onclick = () => {
+        right()
+    }
+
+    left = () => {
+        _index--
+        if (_index < 0) {
+            _index = oLength - 1
+        }
+        clearClass()
+
+    }
+    right = () => {
+        _index++
+        if (_index > oLength - 1) {
+            _index = 0
+        }
+        clearClass()
+    }
+    // 定时器
+    // var timer = null;
+    // timer = setInterval(function () {
+    //     right()
+    // }, 1000)
+    // var oBox = document.querySelector('.gallery_block')
+    // oBox.onmouseover = () => {
+    //     clearInterval(timer)
+    // }
+    // oBox.onmouseout = () => {
+    //     timer = setInterval(function () {
+    //         right()
+    //     }, 2000)
+    // }
 })

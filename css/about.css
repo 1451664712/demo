@@ -1,0 +1,112 @@
+
+.welcome {
+    width: 100%;
+    background: #0b0c11;
+    padding: 88px 0
+}
+
+.welcome>.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1200px;
+    color: #fff;
+}
+
+.welcome>.container>.title_section>h2 {
+    font-size: 3.3em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1.2em;
+}
+
+.welcome>.container>.title_section>h3 {
+    font-size: 3em;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.welcome>.container>.title_section>h3>i {
+    font-size: 0.8em
+}
+
+.welcome>.container>.title_section>h3>span {
+    font-weight: 600;
+    letter-spacing: 4px;
+    font-family: 'Open Sans', sans-serif;
+    display: block;
+    font-size: 18px;
+}
+
+.content_section {
+    margin-top: 57px;
+}
+
+.content_section>.about_info>p {
+    font-size: 14px;
+    line-height: 2em;
+    margin-top: 1em;
+    color: #9da0af;
+    letter-spacing: 1px;
+}
+
+.content_section>.about_info>div>a {
+    display: block;
+    padding: 0.8em 1em;
+    color: #fff;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    margin-top: 2em;
+    text-decoration: none;
+    position: relative;
+    transition: 0.5s;
+}
+
+.content_section>.about_info>div>a::after,
+.content_section>.about_info>div>a::before {
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    content: '';
+    box-sizing: border-box;
+    transform: scale(0);
+    transition: 0.5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.content_section>.about_info>div>a::after {
+    border-bottom: 1px solid #1bb580;
+    border-left: 1px solid #1bb580;
+    transform-origin: 0 100%;
+}
+
+.content_section>.about_info>div>a::before {
+    border-top: 1px solid #1bb580;
+    border-right: 1px solid #1bb580;
+    transform-origin: 100% 0%;
+}
+
+.content_section>.about_info>div>a:hover:after {
+    transform: scale(1);
+}
+
+.content_section>.about_info>div>a:hover::before {
+    transform: scale(1);
+}
+
+.content_section>.about_img>img {
+    width: 100%;
+    height: 100%;
+}
+
+.content_section>.about_img>img:nth-child(2) {
+    margin-top: 10px;
+}
